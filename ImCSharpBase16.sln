@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01", "Task01\Task01.csproj", "{0F51CA04-54E0-4956-B098-453C44E49C1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task01", "Task01\Task01.csproj", "{0F51CA04-54E0-4956-B098-453C44E49C1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task02", "Task02\Task02.csproj", "{17C7DE50-FF8B-4FD1-8638-CC54C8456D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task02", "Task02\Task02.csproj", "{17C7DE50-FF8B-4FD1-8638-CC54C8456D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task03", "Task03\Task03.csproj", "{6F33225F-9709-4BF6-AB57-A0723BDDD572}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task03", "Task03\Task03.csproj", "{6F33225F-9709-4BF6-AB57-A0723BDDD572}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InputTools", "InputTools\InputTools.csproj", "{7AF9BADE-1192-41C3-B106-5BA6B3DC8E69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6F33225F-9709-4BF6-AB57-A0723BDDD572}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F33225F-9709-4BF6-AB57-A0723BDDD572}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F33225F-9709-4BF6-AB57-A0723BDDD572}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AF9BADE-1192-41C3-B106-5BA6B3DC8E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AF9BADE-1192-41C3-B106-5BA6B3DC8E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AF9BADE-1192-41C3-B106-5BA6B3DC8E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AF9BADE-1192-41C3-B106-5BA6B3DC8E69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

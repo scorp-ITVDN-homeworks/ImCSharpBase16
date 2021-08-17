@@ -10,80 +10,42 @@ namespace Task01
 {
     public class Block
     {
-        private Point a;
-        private Point b;
-        private Point c;
-        private Point d;
-
-        public Point A
+        private string name;
+        public string Name
         {
-            get { return a; }
-            set { a = value;  }
+            get { return name; }
+            set { name = value; }
         }
 
-        public Point B
+        private List<Point> points;
+        public List<Point> Points
         {
-            get { return b; }
-            set { b = value; }
+            get { return points; }
+            set { points = value; }
         }
 
-        public Point C
+        private List<Side> sides = new List<Side>() { Capacity = 4, };
+        public List<Side> Sides
         {
-            get { return c; }
-            set { c = value; }
+            get { return sides; }
+            set { sides = value; }
         }
 
-        public Point D
+        public Block(string name, Point a, Point b, Point c, Point d)
         {
-            get { return d; }
-            set { d = value; }
-        }
+            this.name = name;
 
-        private Side ab;
-        private Side bc;
-        private Side cd;
-        private Side ad;
+            Points = new List<Point>() { Capacity = 4, };
+            Points.Add(a);
+            Points.Add(b);
+            Points.Add(c);
+            Points.Add(d);
 
-        public Side AB
-        {
-            get { return ab; }
-            private set { ab = value; }
-        }
-
-        public Side BC
-        {
-            get { return bc; }
-            private set { bc = value; }
-        }
-
-        public Side CD
-        {
-            get { return cd; }
-            private set { cd = value; }
-        }
-
-        public Side AD
-        {
-            get { return ad; }
-            private set { ad = value; }
-        }
-
-        public Block()
-        {
-
-        }
-
-        public Block(Point a, Point b, Point c, Point d)
-        {
-            A = a;
-            B = b;
-            C = c;
-            D = d;
-
-            AB = new Side(A, B);
-            BC = new Side(B, C);
-            CD = new Side(C, D);
-            AD = new Side(D, A);
+            Sides = new List<Side>() { Capacity = 4, };
+            Sides.Add(new Side(Points[0],Points[1]));
+            Sides.Add(new Side(Points[1], Points[2]));
+            Sides.Add(new Side(Points[2], Points[3]));
+            Sides.Add(new Side(Points[3], Points[0]));
 
         }
 
@@ -136,6 +98,41 @@ namespace Task01
 
                 length = Math.Sqrt(Math.Pow(x, 2) + Math.Pow(y, 2));
             }
+        }
+
+        public static Block CreateBlock(string name, int width, int height, Point startPoint)
+        {
+            return new Block
+                (
+                name,
+                startPoint,
+                new Point(startPoint.X + width, startPoint.Y),
+                new Point(startPoint.X + width, startPoint.Y + height),
+                new Point(startPoint.X, startPoint.Y + height)
+                );
+        }
+
+        public override bool Equals(object obj)
+        {
+            Block blockToCompare = (Block)obj;
+            bool areEquals = false;
+            int counter = 0;
+            int step = 0;
+            foreach(var side in Sides)
+            {
+                counter = step;
+                for(int i = 0; i < blockToCompare.Sides.Count; i++)
+                {
+                    areEquals = Sides[counter].SideLength == blockToCompare.Sides[i].SideLength;
+                    if (areEquals == false) break;
+                    counter++;
+                    if (counter > Sides.Count - 1) counter = 0;
+                }
+                if (areEquals == true) break;
+                step++;
+            }
+
+            return areEquals;
         }
     }
 
